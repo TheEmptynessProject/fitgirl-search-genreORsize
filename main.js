@@ -86,7 +86,11 @@ function convertToMB(sizevar) {
 					} else {
 						for (const genre of genresWanted) {
 							if (temp[3].outerText.toLowerCase().includes(genre.toLowerCase())) {
-								sizeArray.push(`(${realsize}:${packsize})`)
+								if (packsizeBool) {
+									sizeArray.push(packsize)
+								} else {
+									sizeArray.push(realsize)
+								}
 								myArray.push(link);
 								localStorage.setItem('urlArray', JSON.stringify(myArray));
 								localStorage.setItem('sizeArray', JSON.stringify(sizeArray))
@@ -125,7 +129,6 @@ function convertToMB(sizevar) {
 	underInput.style.left = '570px';
 	underInput.addEventListener('change', function() {
 		userInput = underInput.value;
-		console.log(userInput);
 	});
 	underX.innerHTML = 'Get storage values lower than:';
 	underX.style.color = 'white';
