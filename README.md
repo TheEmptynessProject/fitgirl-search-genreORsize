@@ -1,1 +1,1 @@
-# fitgirl-search-genreORsize
+# FitGirl search for Size or Genre
