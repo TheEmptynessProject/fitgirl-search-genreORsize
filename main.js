@@ -1,12 +1,11 @@
 // ==UserScript==
-// @name         Search for genre or size
-// @namespace    http://tampermonkey.net/
-// @version      0.1
+// @name         FitGirl search by genre or size
+// @version      1.0
 // @license      MIT
 // @description  Search for Genres or Size on https://fitgirl-repacks.site/
 // @author       TheEmptynessProject
 // @match        https://fitgirl-repacks.site/*
-// @icon         https://github.com/TheEmptynessProject/fitgirl-search-genreORsize
+// @namespace    https://github.com/TheEmptynessProject/fitgirl-search-genreORsize
 // ==/UserScript==
 function GET_storage_underX(sizevar) {
 	const url = JSON.parse(localStorage.getItem("urlArray")) || [];
@@ -47,7 +46,7 @@ function convertToMB(sizevar) {
 	const maxSize = convertToMB('5 GB') //Change to search for wanted size
 	const packsizeBool = true; //Change to check either repack size (true) or real size (false)
 	const posts = document.getElementsByClassName("post");
-	let stopScript = false; // flag to track whether the button Stop script has been clicked
+	let stopScript = false;
 	for (const post of posts) {
 		if (stopScript) {
 			break;
